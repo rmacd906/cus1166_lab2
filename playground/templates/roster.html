@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block body %}
+<p>
+  <ul>
+    {% if grade_view==1 %}
+      {% for student in class_roster %}
+        <li> Name:  <b>{{student[0]}}</b> </li>
+        <li> Grade: <span style="color:red;"> {{student[1]}} </span></li>
+      {% endfor %}
+    {% endif %}
+    {% if grade_view==2 %}
+      {% for student in class_roster %}
+        <li> Name:  <b>{{student[0]}}</b> </li>
+        <li> Level: {{student[2]}}
+      {% endfor %}
+    {% endif %}
+    {% if grade_view==0 %}
+      {% for student in class_roster %}
+        <li> Name:  <b>{{student[0]}}</b> </li>
+        <li> Grade: <span style="color:red;"> {{student[1]}} </span></li>
+        <li> Level: {{student[2]}}
+      {% endfor %}
+    {% endif %}
+  </ul>
+</p>
+{% endblock %}
